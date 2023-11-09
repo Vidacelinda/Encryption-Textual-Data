@@ -17,16 +17,21 @@ step 4 - decript key
 # fkey.write(key)
 
 #READ key from file
-fkey=open("file_key.text",'rb')
-key=fkey.read()
+# fkey=open("file_key.text",'rb')
+# key=fkey.read()
+# cipher=Fernet(key)
+# print(key)
+
+
+"""TEST 1 """
+key = Fernet.generate_key()
+# TEST print("encripted key", key)
+
 cipher=Fernet(key)
-print(key)
-
-
 #ENCRPTION
 encrypted_text=cipher.encrypt(b't1 this is my secret message')
 #.decode() removes -> b''
-# print(encrypted_text.decode())# ex: $dg#56
+print(encrypted_text.decode())# ex: $dg#56
 
 #DECRIPTION
 orignal_text=cipher.decrypt(encrypted_text)
