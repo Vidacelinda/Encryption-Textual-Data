@@ -12,7 +12,12 @@ step 4 - decript key
 key = Fernet.generate_key()
 #TEST print("encripted key", key)
 cipher = Fernet(key)
+#ENCRPTION
 encrypted_text=cipher.encrypt(b'this is my secret message')
 print(encrypted_text)
+
+#DECRIPTION
+orignal_text=cipher.decrypt(encrypted_text)
+print(orignal_text.decoded())
 
 # cipher= Ferent(key)
