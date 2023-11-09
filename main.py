@@ -30,8 +30,8 @@ cipher_text = input("Enter a message to decrypt: ")
 plain_text = ""
 
 for letter in cipher_text:
-    index = key.index(letter)
-    plain_text += chars[index]
+    index = key.index(letter)  # $:1, f:2 , &:3
+    plain_text += chars[index] # a:1, b:2 , c:3
 
 print(f"encrypted message: {cipher_text}")
 print(f"original message : {plain_text}")
