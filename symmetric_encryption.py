@@ -16,11 +16,11 @@ step 4 - decript key
 # fkey=open("file_key.text",'wb')
 # fkey.write(key)
 
-#READ key from file
-# fkey=open("file_key.text",'rb')
-# key=fkey.read()
-# cipher=Fernet(key)
-# print(key)
+# READ key from file
+fkey=open("file_key.text",'rb')
+key=fkey.read()
+cipher=Fernet(key)
+print(key)
 
 
 """TEST 1 """
