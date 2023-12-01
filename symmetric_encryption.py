@@ -30,7 +30,7 @@ with open(file_name,'rb') as f:
 
 # encrypt file
 encrypted_file=cipher.encrypt(e_file)
-# save
+# save (write to file )
 with open(file_name+"_encrypted",'wb') as ef:
     ef.write(encrypted_file)
 
