@@ -20,4 +20,7 @@ It uses this index to look up the corresponding character in the chars list and 
 
 Output:
 The original message and the encrypted/decrypted message are printed to the console.
-will be updated nov 11,2023
+
+### Symetric encrytion : 
+
+In symmetric encryption, a single key is used for both the encryption and decryption of the data. This means that the same key is shared between the sender and the recipient. 
