@@ -1,3 +1,4 @@
+#NOTE:  CODE FOR STUDYING (IGNORE)
 #Carlo Leiva
 #Textual data encryption
 # Substitution cipher
