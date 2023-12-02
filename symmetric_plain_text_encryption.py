@@ -1,6 +1,5 @@
 from cryptography.fernet import Fernet
 
-
 # CODE FOR STUDYING (IGNORE)
 """ TEST 1 / Testing Plain text / cons : does not save key and has to be regenerated """
 
