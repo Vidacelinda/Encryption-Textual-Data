@@ -7,7 +7,7 @@ from cryptography.fernet import Fernet
 Encryption 
 3- read key form "file_key.text"
 4- use key for the cipher algorithm using Fernet/ ex: cipher=Fernet(key)
-5- 
+5 -
 """
 
 
