@@ -39,7 +39,7 @@ def encrypt_file(file):
     encrypted_file=cipher.encrypt(e_file)
 
     # save encrypted (write to file )
-    with open(file_name+"_encrypted",'wb') as ef:
+    with open("encrypted_"+file_name+".text",'wb') as ef:
         ef.write(encrypted_file)
 
 # open saved key file
@@ -49,7 +49,7 @@ def decrypt_file(file):
     # use fernet scheme
     cipher=Fernet(key)
     # read saved encrypted_data
-    with open('excel_test_file.xlsx_encrypted','rb') as df:
+    with open('encrypted_excel_test_file.xlsx.text','rb') as df:
         encrypted_data=df.read()
     # Decrypt the encrypted_data to obtain the original data.
     decrypted_file=cipher.decrypt(encrypted_data)
