@@ -1,5 +1,13 @@
 # Encryption Textual Data test in python
 
+
+### Symetric encrytion : 
+
+For the implementation of symmetric and asymmetric encryption we decided to use cryptography which contains a scheme “Fernet” to help build the symmetrical implementation for the early demo of the project. The python Symmetric encryption code has three functions and a main routine for generating a key, encryption and decryption using the Fernet encryption scheme. The `generate_key()` function generates a Fernet key, prints it for reference, and writes it to a file named "file_key.text" for later use. The `encrypt_file(file)` function reads the key from the file, performs symmetric encryption on the specified file (in this case, 'excel_test_file.xlsx'), and saves the encrypted content to a new file with a name prefixed by "encrypted_". The `decrypt_file(file)` function reads the key from the file, uses the Fernet scheme for symmetric decryption on the specified encrypted file, and writes the decrypted content to a new file named 'decrypted_excel_test_file.xlsx'. The `main()` function serves as the entry point, prompting the user to generate a key and then demonstrate the encryption and decryption processes on the specified file. If the user chooses to generate a key, it is created and saved before proceeding with the encryption and decryption operations. 
+
+input a file to be ecnrpterd by a key which creates a cipher text file whcih then will be decrypted by the same key which will produce the original file. Note the key is stored in a key file .
+
+### substitution encryption 
 Character Set Definition:
 You define a character set chars, which includes space, punctuation, digits, and uppercase and lowercase letters. This character set represents all the characters that can appear in the input text.
 
@@ -20,7 +28,3 @@ It uses this index to look up the corresponding character in the chars list and 
 
 Output:
 The original message and the encrypted/decrypted message are printed to the console.
-
-### Symetric encrytion : 
-
-In symmetric encryption, a single key is used for both the encryption and decryption of the data. This means that the same key is shared between the sender and the recipient. 
