@@ -11,14 +11,13 @@ Encryption function
 3- read key form "file_key.text"
 4- use key for the cipher algorithm using Fernet/ ex: cipher=Fernet(key)
 5- open the file you want to encypt .Encrypt said file using the cipher algorithm
-summary - encrypts file and produces cipher text file ("encrypted_excel_test_file.xlsx.text")
+summary - encrypts file given and produces cipher text file ("encrypted_excel_test_file.xlsx.text")
 
 Decryption function
 7- read key from file "file_key_text" 
 8- use key with Fernet('key') for the cipher algorithm
 9- read encrypted file then decrypted using cipher.dercypt('file')
 10- write decrypted data to a file for visualization.
-
 
 """
 
@@ -34,9 +33,9 @@ def generate_key():
     fkey.write(key)
 
 """ENCRYPT FILE / Symmtric Encryption"""
-def encrypt_file(file):
+def encrypt_file(file,key_file):
     # READ key from "file_key"
-    fkey=open("file_key.text", 'rb') #read byte
+    fkey=open(key_file, 'rb') #read byte
     key=fkey.read()
 
     # symetric encryption
@@ -55,9 +54,9 @@ def encrypt_file(file):
         ef.write(encrypted_file)
 
 """ Decrypt file /symmetric decryption """
-def decrypt_file(file):
+def decrypt_file(file,key_file):
     # open saved key file
-    fkey = open("file_key.text", 'rb')
+    fkey = open(key_file, 'rb')
     key=fkey.read()
     # use fernet scheme
     cipher=Fernet(key)
@@ -76,8 +75,8 @@ def main():
     if (input('generate key ? enter y/n ').lower())=='y':
         generate_key()
 
-    encrypt_file('excel_test_file.xlsx')
-    decrypt_file('encrypted_excel_test_file.xlsx.text')
+    encrypt_file('excel_test_file.xlsx' , 'file_key.text')
+    decrypt_file('encrypted_excel_test_file.xlsx.text' , 'file_key.text')
 
 
 if __name__ == '__main__':
