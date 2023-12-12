@@ -27,4 +27,5 @@ For each character, it finds the index of that character in the key list.
 It uses this index to look up the corresponding character in the chars list and appends it to the plain_text.
 
 Output:
+
 The original message and the encrypted/decrypted message are printed to the console.
