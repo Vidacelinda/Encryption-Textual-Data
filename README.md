@@ -2,7 +2,7 @@
 
 ## Objective
 
-Algorithm's will be used for a larger libary to test homomorphic encryption project
+Algorithm's will be used for a larger libary to test homomorphic encryption .
 
 ### Symetric encryption : (100% done)
 
