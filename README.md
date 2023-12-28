@@ -36,4 +36,4 @@ The original message and the encrypted/decrypted message are printed to the cons
 
 ### Asymmetric encryption : (starting dec ,2024 )
 
-Asymmetric encryption is a cryptographic system that uses a pair of keys for secure communication. The key pair consists of a public key and a private key. I will be doing an implmentation of asymetric encrption on a file. Also known as RSA.
+Asymmetric encryption is a cryptographic system that uses a pair of keys for secure communication. The key pair consists of a public key and a private key. I will be doing an implmentation of asymetric encrption on a file. Also known as RSA. Using cryptography libary
