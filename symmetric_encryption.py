@@ -27,7 +27,6 @@ def generate_key():
     # generate key
     key = Fernet.generate_key()
     print("encripted key : ", key)
-
     # WRITE key to file to save and use later
     fkey = open("file_key.text", 'wb')
     fkey.write(key)
@@ -54,7 +53,7 @@ def encrypt_file(file,key_file):
         ef.write(encrypted_file)
 
 """ Decrypt file /symmetric decryption """
-def decrypt_file(file,key_file):
+def decrypt_file(file, key_file):
     # open saved key file
     fkey = open(key_file, 'rb')
     key=fkey.read()
@@ -75,8 +74,8 @@ def main():
     if (input('generate key ? enter y/n ').lower())=='y':
         generate_key()
 
-    encrypt_file('excel_test_file.xlsx' , 'file_key.text')
-    decrypt_file('encrypted_excel_test_file.xlsx.text' , 'file_key.text')
+    encrypt_file('excel_test_file.xlsx', 'file_key.text')
+    decrypt_file('encrypted_excel_test_file.xlsx.text', 'file_key.text')
 
 
 if __name__ == '__main__':
