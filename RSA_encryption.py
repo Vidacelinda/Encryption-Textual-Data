@@ -1,4 +1,5 @@
 import random
+import math
 
 # is number prime
 def is_prime(number):
@@ -22,5 +23,14 @@ def mod_inverse(e,phi):
             return d
     raise ValueError("mod_invers does not exist")
 
+p,q=generate_prime(1000,5000),generate_prime(1000,5000)
+while p==q:
+    q=generate_prime(1000,5000)
+n=p*q
+phi_n=(p-1)*(q-1)
 
+e=random.randint(3,phi_n-1)
+while math.gcd(e,phi_n)!=1:
+    e=random.randint(3,phi_n-1)
 
+d=mod_inverse(e,phi_n)
