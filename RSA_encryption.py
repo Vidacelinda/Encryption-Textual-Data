@@ -1,5 +1,6 @@
 import random
 
+# is number prime
 def is_prime(number):
     if number<2:
         return False
@@ -7,3 +8,11 @@ def is_prime(number):
         if number % i== 0:
             return False
     return True
+# generate prime number
+def generate_prime(min_val,max_val):
+    #for the moment gentrate random number until it is prime
+    prime =random.randit(min_val,max_val)
+    while not is_prime(prime):
+        prime=random.randint(min_val,max_val)
+    return prime
+
