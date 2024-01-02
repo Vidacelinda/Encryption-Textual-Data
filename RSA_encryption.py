@@ -16,3 +16,11 @@ def generate_prime(min_val,max_val):
         prime=random.randint(min_val,max_val)
     return prime
 
+def mod_inverse(e,phi):
+    for d in range(3,phi):
+        if (d*e)%phi==1:
+            return d
+    raise ValueError("mod_invers does not exist")
+
+
+
