@@ -34,3 +34,9 @@ while math.gcd(e,phi_n)!=1:
     e=random.randint(3,phi_n-1)
 
 d=mod_inverse(e,phi_n)
+
+print("public key",e)
+print("private key",d)
+print("n",n)
+print("phi of n:",phi_n)
+print("p")
