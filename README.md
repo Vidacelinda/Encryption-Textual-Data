@@ -37,3 +37,7 @@ The original message and the encrypted/decrypted message are printed to the cons
 ### Math of Asymmetric encryption (RSA) :
 
 Asymmetric encryption is a cryptographic system that uses a pair of keys for secure communication. The key pair consists of a public key and a private key. I will be doing an implmentation of asymetric encrption on a message and implementing the math aspect from sratch in the python file "math_RSA_encrption.py" . Also known as RSA.
+
+### RSA implmentation using RSA libary
+
+file RSA.py https://pypi.org/project/rsa/
