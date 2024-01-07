@@ -28,7 +28,7 @@ def private_key():
         private_key = rsa.PrivateKey.load_pkcs1(f.read())
     return private_key
 
-# generate and save signature
+# generate and save signature with message
 def generate_signature(message):
     signature = rsa.sign(message.encode(),private_key(),"SHA-256")
     """ create and save signature to a file for the message signed """
@@ -43,16 +43,32 @@ def signature_verfication(message):
     # if it print "SHA-256" then its verfied if not then Not verified
     try:
         rsa.verify(message.encode(), signature, public_key())
-        print("VERIFIED")
+        print("* VERIFIED *")
     except (ValueError, rsa.pkcs1.VerificationError) as e:
-        print("NOT VERIFIED")
+        print("* ! NOT VERIFIED ! *")
+        print('The message is from an unknown person ')
+        print('MESSAGE RECIVED: ',message)
 
 
 if __name__ == '__main__':
-    # generate_keys()
-    print("TEST", private_key())
+    run_rsa_signature=True
+    while run_rsa_signature:
+        print("#######-   USER 1 (SENDER)   -##########")
+        if (input('generate key ? y/n ').lower()=='y'):
+            generate_keys()
+        print("TEST", private_key())
+        message= input('enter message to send : ')
+        # message = "hello this is calvo and my email is mrc@123 "
+        if (input('generate new signatuer for message ? y/n : ').lower() == 'y'):
+            generate_signature(message)
+        print("#######-   USER 2 (RECEIVER)   -##########")
+        # message = "hello this is calvo and my email is mrc@123 " #TEST
+        signature_verfication(message)
 
-    message = "hello this is calvo and my email is mrc@123 "
-    # generate_signature(message)
-    # message = "hello this is calvo and my email is mrc@123 " #TEST
-    signature_verfication(message)
+        if input('do you want to do this again ? y/n : ')=='y':
+            continue
+        else:
+            print('END of RSA signature program ')
+            break
+
+
