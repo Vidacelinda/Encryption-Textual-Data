@@ -23,7 +23,7 @@ with open("RSA keys/public.pem","rb") as f:
 with open("RSA keys/private.pem","rb") as f:
     private_key = rsa.PrivateKey.load_pkcs1(f.read())
 
-"""Test 1 : see if encrypted message works """
+"""Test 1.1 :encrypt message and save it as a file . see if encrypted message works """
 # message = "Taco please"
 #
 # # encode() converts string into bytes
@@ -33,8 +33,30 @@ with open("RSA keys/private.pem","rb") as f:
 # with open("RSA encrypted message/encrypted.message", "wb") as f:
 #     f.write(encrypted_message)
 
+"""test 1.2 :decrypt the encrpted message using private key."""
+# encrypted_message = open("RSA encrypted message/encrypted.message", "rb").read()
+#
+# decrypted_message = rsa.decrypt(encrypted_message,private_key)
 
-encrypted_message = open("RSA encrypted message/encrypted.message", "rb").read()
+# print(decrypted_message.decode())
 
-decrypted_message = rsa.decrypt(encrypted_message,private_key)
-print(decrypted_message)
+
+
+""" signature """
+#authentic message from sender
+message="hello this is calvo and my email is mrc@123 "
+# NON-authentic message from sender
+# message="hello im calvo trust me (NOT CALVO) "
+
+signature = rsa.sign(message.encode(),private_key,"SHA-256")
+
+""" create and save signature to a file for the message signed """
+# with open("signature","wb") as f:
+#     f.write(signature)
+
+"""read signature from file """
+with open("signature","rb") as f:
+    signature=f.read()
+
+# if it print "SHA-256"
+print(rsa.verify(message.encode(),signature,public_key))
