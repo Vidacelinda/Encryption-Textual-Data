@@ -7,8 +7,8 @@ import rsa
 def generate_keys():
     public_key,private_key=rsa.newkeys(1024)
     """ store keys / save keys in RSA signature file"""
-    #use ".save_pkcs1" algorithm for the keys
-    with open("RSA signature/public_key.pem","wb") as f :
+    # use ".save_pkcs1" algorithm for the keys
+    with open("RSA signature/public_key.pem","wb") as f:
         f.write(public_key.save_pkcs1("PEM"))
     with open("RSA signature/private_key.pem", "wb") as f:
         f.write(private_key.save_pkcs1("PEM"))
@@ -18,7 +18,7 @@ def generate_keys():
 # call public key from saved file
 def public_key():
     with open("RSA signature/public_key.pem","rb") as f:
-        #when reading the pem format you would have to load it using the same algorithm used when saving they key to the file.
+        # when reading the pem format you would have to load it using the same algorithm used when saving they key to the file.
         public_key = rsa.PublicKey.load_pkcs1(f.read())
     return public_key
 
@@ -30,7 +30,7 @@ def private_key():
 
 # generate and save signature with message
 def generate_signature(message):
-    signature = rsa.sign(message.encode(),private_key(),"SHA-256")
+    signature = rsa.sign(message.encode(), private_key(), "SHA-256")
     """ create and save signature to a file for the message signed """
     with open("RSA signature/signature","wb") as f:
         f.write(signature)
@@ -48,7 +48,7 @@ def signature_verfication(message):
         print('MESSAGE RECEIVED: ', message)
     except (ValueError, rsa.pkcs1.VerificationError) as e:
         print("* !! NOT VERIFIED !! *")
-        print('message from an unknown person and not signed from the correct person')
+        print('message from :UNKNOWN USER \n' + 'message NOT signed from USER1')
         print('MESSAGE RECEIVED: ', message)
 
 
@@ -58,8 +58,8 @@ if __name__ == '__main__':
         print("\n#######-   USER 1 (SENDER)   -##########")
         if (input('generate key ? y/n :').lower()=='y'):
             generate_keys()
+        print(private_key())
         message= input('enter message to send :')
-        # message = "hello this is calvo and my email is mrc@123 "
         if (input('generate new signatuer for message ? y/n : ').lower() == 'y'):
             generate_signature(message)
         print("\n#######-   USER 2 (RECEIVER)   -##########")
