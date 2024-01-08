@@ -1,8 +1,8 @@
 # Encryption Textual Data test in python
 
-##Carlo Leiva 
+## Carlo Leiva 
 
-## Objectiv
+## Objective
 
 Algorithm's will be used for a larger libary to test homomorphic encryption .
 
