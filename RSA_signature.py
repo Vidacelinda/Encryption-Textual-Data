@@ -44,28 +44,29 @@ def signature_verfication(message):
     try:
         rsa.verify(message.encode(), signature, public_key())
         print("* VERIFIED *")
+        print('message from USER 1')
+        print('MESSAGE RECEIVED: ', message)
     except (ValueError, rsa.pkcs1.VerificationError) as e:
-        print("* ! NOT VERIFIED ! *")
-        print('The message is from an unknown person ')
-        print('MESSAGE RECIVED: ',message)
+        print("* !! NOT VERIFIED !! *")
+        print('message from an unknown person and not signed from the correct person')
+        print('MESSAGE RECEIVED: ', message)
 
 
 if __name__ == '__main__':
     run_rsa_signature=True
     while run_rsa_signature:
-        print("#######-   USER 1 (SENDER)   -##########")
-        if (input('generate key ? y/n ').lower()=='y'):
+        print("\n#######-   USER 1 (SENDER)   -##########")
+        if (input('generate key ? y/n :').lower()=='y'):
             generate_keys()
-        print("TEST", private_key())
-        message= input('enter message to send : ')
+        message= input('enter message to send :')
         # message = "hello this is calvo and my email is mrc@123 "
         if (input('generate new signatuer for message ? y/n : ').lower() == 'y'):
             generate_signature(message)
-        print("#######-   USER 2 (RECEIVER)   -##########")
+        print("\n#######-   USER 2 (RECEIVER)   -##########")
         # message = "hello this is calvo and my email is mrc@123 " #TEST
         signature_verfication(message)
 
-        if input('do you want to do this again ? y/n : ')=='y':
+        if input('\ndo you want to do this again ? y/n :')=='y':
             continue
         else:
             print('END of RSA signature program ')
