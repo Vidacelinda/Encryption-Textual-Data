@@ -19,7 +19,7 @@ import rsa
 def generate_key():
     # NOTE: 1024 bit for testing / recommended to use 2048 for a more secure RSA
     public_key , private_key = rsa.newkeys(1024)
-
+    print('private key generated',private_key)
     with open("RSA keys/public.pem","wb") as f:
         #save_pkcs1 algorithm
         f.write(public_key.save_pkcs1("PEM"))
@@ -40,16 +40,17 @@ def generate_key():
 """FUNCTION : call private and puyblic keys"""
 def public_key():
     with open("RSA keys/public.pem","rb") as f:
-        #when reading the pem format you would have to load it using the same algorithm used when saving they key to the file.
+        # when reading the pem format you would have to load it using the same algorithm used when saving they key to the file.
         public_key = rsa.PublicKey.load_pkcs1(f.read())
         return public_key
 
 def private_key():
     with open("RSA keys/private.pem","rb") as f:
         private_key = rsa.PrivateKey.load_pkcs1(f.read())
+        print('private key :',private_key)
         return private_key
 
-"""Test 1.1 :encrypt message and save it as a file . see if encrypted message works """
+""" Test 1.1 :encrypt message and save it as a file . see if encrypted message works."""
 # message = "Taco please"
 #
 # # encode() converts string into bytes
@@ -60,11 +61,11 @@ def private_key():
 #     f.write(encrypted_message)
 
 """FUNCTION :encrypt message and save it as a file"""
-def encrypt(message):
+def encrypt(message,public_key):
     # message = "Taco please"
 
     # encode() converts string into bytes
-    encrypted_message = rsa.encrypt(message.encode(), public_key())
+    encrypted_message = rsa.encrypt(message.encode(), public_key)
 
     # print(encrypted_message)
     with open("RSA encrypted message/encrypted.message", "wb") as f:
@@ -79,11 +80,11 @@ def decrypt(encrypted_file_path):
     print(decrypted_message.decode())
 
 if __name__ == '__main__':
-    if input('do you want to generate a key') == 'y':
+    if input('do you want to generate a key :') == 'y':
         generate_key()
 
     message = "this is my secrete message"
-    encrypt(message)
+    encrypt(message,public_key())
 
     # give file path
     encrypted_file_path = "RSA encrypted message/encrypted.message"
@@ -92,7 +93,7 @@ if __name__ == '__main__':
 
 """ signature """
 # #authentic message from sender
-# message="hello this is calvo and my email is mrc@123 "
+# message="hello this is calvo and my e mail is mrc@123 "
 # # NON-authentic message from sender
 # # message="hello im calvo trust me (NOT CALVO) "
 #
