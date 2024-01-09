@@ -80,10 +80,13 @@ def decrypt(encrypted_file_path, private_key):
     print(decrypted_message.decode())
 
 if __name__ == '__main__':
+    print('1#  User 1 has: private_key and public_key  \n2# User 2 will send a message to be encrpted by using User 1 public key \n3# User 1 will use his private key to encrypt User 2 message.')
     if input('do you want to generate a key :') == 'y':
         generate_key()
 
     message = "this is my secrete message"
+
+    U
     encrypt(message, public_key())
 
     # give file path
