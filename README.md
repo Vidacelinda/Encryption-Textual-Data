@@ -1,8 +1,10 @@
 # Encryption Textual Data test in python
 
+## crated by: Carlo Leiva 
+
 ## Objective
 
-Algorithm's will be used for a larger libary to test homomorphic encryption .
+Algorithm's will be used for a larger libary to test homomorphic encryption by comparing the results.
 
 ### Symetric encryption : (100% done)
 
