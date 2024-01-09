@@ -72,10 +72,10 @@ def encrypt(message,public_key):
         f.write(encrypted_message)
 
 """test 1.2 :decrypt the encrypted message using private key."""
-def decrypt(encrypted_file_path):
+def decrypt(encrypted_file_path, private_key):
     # read encrypted message file
     encrypted_message = open(encrypted_file_path, "rb").read()
-    decrypted_message = rsa.decrypt(encrypted_message, private_key())
+    decrypted_message = rsa.decrypt(encrypted_message, private_key)
 
     print(decrypted_message.decode())
 
@@ -84,14 +84,16 @@ if __name__ == '__main__':
         generate_key()
 
     message = "this is my secrete message"
-    encrypt(message,public_key())
+    encrypt(message, public_key())
 
     # give file path
     encrypted_file_path = "RSA encrypted message/encrypted.message"
-    decrypt(encrypted_file_path)
+
+    # decrypted file prints message
+    decrypt(encrypted_file_path, private_key())
 
 
-""" signature """
+""" signature TEST  """
 # #authentic message from sender
 # message="hello this is calvo and my e mail is mrc@123 "
 # # NON-authentic message from sender
