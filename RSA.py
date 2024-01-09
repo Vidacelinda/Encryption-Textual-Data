@@ -70,19 +70,24 @@ def encrypt(message):
     with open("RSA encrypted message/encrypted.message", "wb") as f:
         f.write(encrypted_message)
 
-"""test 1.2 :decrypt the encrpted message using private key."""
-def decrypt():
+"""test 1.2 :decrypt the encrypted message using private key."""
+def decrypt(encrypted_file_path):
     # read encrypted message file
-    encrypted_message = open("RSA encrypted message/encrypted.message", "rb").read()
+    encrypted_message = open(encrypted_file_path, "rb").read()
     decrypted_message = rsa.decrypt(encrypted_message, private_key())
 
     print(decrypted_message.decode())
 
 if __name__ == '__main__':
-    generate_key()
-    message="this is my secrete message"
+    if input('do you want to generate a key') == 'y':
+        generate_key()
+
+    message = "this is my secrete message"
     encrypt(message)
-    decrypt()
+
+    # give file path
+    encrypted_file_path = "RSA encrypted message/encrypted.message"
+    decrypt(encrypted_file_path)
 
 
 """ signature """
