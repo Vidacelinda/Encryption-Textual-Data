@@ -19,7 +19,7 @@ import rsa
 def generate_key():
     # NOTE: 1024 bit for testing / recommended to use 2048 for a more secure RSA
     public_key , private_key = rsa.newkeys(1024)
-    print('private key generated',private_key)
+    # print('private key generated',private_key)
     with open("RSA keys/public.pem","wb") as f:
         #save_pkcs1 algorithm
         f.write(public_key.save_pkcs1("PEM"))
@@ -47,7 +47,7 @@ def public_key():
 def private_key():
     with open("RSA keys/private.pem","rb") as f:
         private_key = rsa.PrivateKey.load_pkcs1(f.read())
-        print('private key :',private_key)
+        # print('private key :',private_key)
         return private_key
 
 """ Test 1.1 :encrypt message and save it as a file . see if encrypted message works."""
@@ -77,21 +77,22 @@ def decrypt(encrypted_file_path, private_key):
     encrypted_message = open(encrypted_file_path, "rb").read()
     decrypted_message = rsa.decrypt(encrypted_message, private_key)
 
-    print(decrypted_message.decode())
+    print("decrypted message : ",decrypted_message.decode())
 
 if __name__ == '__main__':
-    print('1#  User 1 has: private_key and public_key  \n2# User 2 will send a message to be encrpted by using User 1 public key \n3# User 1 will use his private key to encrypt User 2 message.')
+    print('1#  User 1 has: private_key and public_key  \n2# User 2 will send a message to be encrpted by using User 1 public key \n3# User 1 will use his private key to encrypt User 2 message \n')
     if input('do you want to generate a key :') == 'y':
         generate_key()
+    print('\n### Your User 2 sending a message ###')
+    message = input('Enter message:')
 
-    message = "this is my secrete message"
-
-    U
+    print("message encrypted using User_1's public key")
     encrypt(message, public_key())
 
     # give file path
     encrypted_file_path = "RSA encrypted message/encrypted.message"
-
+    print('\n### Your User 1 receiving a message: ###')
+    print("message decrypted using User_1's public key")
     # decrypted file prints message
     decrypt(encrypted_file_path, private_key())
 
