@@ -50,15 +50,7 @@ def private_key():
         # print('private key :',private_key)
         return private_key
 
-""" Test 1.1 :encrypt message and save it as a file . see if encrypted message works."""
-# message = "Taco please"
-#
-# # encode() converts string into bytes
-# encrypted_message = rsa.encrypt(message.encode(),public_key)
-#
-# # print(encrypted_message)
-# with open("RSA encrypted message/encrypted.message", "wb") as f:
-#     f.write(encrypted_message)
+
 
 """FUNCTION :encrypt message and save it as a file"""
 def encrypt(message,public_key):
