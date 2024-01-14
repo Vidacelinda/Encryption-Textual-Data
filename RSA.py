@@ -89,21 +89,3 @@ if __name__ == '__main__':
     decrypt(encrypted_file_path, private_key())
 
 
-""" signature TEST  """
-# #authentic message from sender
-# message="hello this is calvo and my e mail is mrc@123 "
-# # NON-authentic message from sender
-# # message="hello im calvo trust me (NOT CALVO) "
-#
-# signature = rsa.sign(message.encode(),private_key,"SHA-256")
-#
-# """ create and save signature to a file for the message signed """
-# # with open("signature","wb") as f:
-# #     f.write(signature)
-#
-# """read signature from file """
-# with open("signature","rb") as f:
-#     signature=f.read()
-#
-# # if it print "SHA-256"
-# print(rsa.verify(message.encode(),signature,public_key))
