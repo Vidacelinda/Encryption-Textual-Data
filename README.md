@@ -1,6 +1,6 @@
 # Encryption Textual Data test in python
 
-## crated by: Carlo Leiva 
+## created by : Carlo Leiva 
 
 ## Objective
 
