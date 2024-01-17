@@ -6,7 +6,7 @@
 
 Algorithm's will be used for a larger libary to test homomorphic encryption by comparing the results.
 
-### Symetric encryption : (100% done)
+### Symetric encryption : (complete)
 
 file : symmetric_encryption.py
 
@@ -14,7 +14,7 @@ For the implementation of symmetric and asymmetric encryption we decided to use 
 
 input a file to be ecnrpterd by a key which creates a cipher text file whcih then will be decrypted by the same key which will produce the original file. Note the key is stored in a key file .
 
-### substitution encryption : (100% done)
+### substitution encryption : (complete)
 
 file : substitution_encrption.py
 
@@ -40,13 +40,13 @@ Output:
 
 The original message and the encrypted/decrypted message are printed to the console.
 
-### Math of Asymmetric encryption (RSA) : (complet)
+### Math of Asymmetric encryption (RSA) : (complete)
 
 file: math_RSA_encryption
 
 Asymmetric encryption is a cryptographic system that uses a pair of keys for secure communication. The key pair consists of a public key and a private key. I will be doing an implmentation of asymetric encrption on a message and implementing the math aspect from sratch in the python file "math_RSA_encrption.py" . Also known as RSA.
 
-### RSA implmentation using RSA libary : (100% done)
+### RSA implmentation using RSA libary : (complete)
 
 file: RSA.py
 
