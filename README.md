@@ -40,15 +40,19 @@ Output:
 
 The original message and the encrypted/decrypted message are printed to the console.
 
-### Math of Asymmetric encryption (RSA) :
+### Math of Asymmetric encryption (RSA) : (complet)
 
 file: math_RSA_encryption
 
 Asymmetric encryption is a cryptographic system that uses a pair of keys for secure communication. The key pair consists of a public key and a private key. I will be doing an implmentation of asymetric encrption on a message and implementing the math aspect from sratch in the python file "math_RSA_encrption.py" . Also known as RSA.
 
-### RSA implmentation using RSA libary
+### RSA implmentation using RSA libary : (100% done)
 
 file: RSA.py
 
 using a RSA libary ( https://pypi.org/project/rsa/ ) and its documentation ( https://stuvel.eu/python-rsa-doc/ ) to help implment RSA. implmentation in file RSA.py
+
+### Hybrid RSA and symetric encryption
+
+The scurity of RSA with the speed of symertic encryption.
 
