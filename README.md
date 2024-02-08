@@ -54,6 +54,7 @@ using a RSA libary ( https://pypi.org/project/rsa/ ) and its documentation ( htt
 
 ### Hybrid RSA and symetric encryption
 
-The scurity of RSA with the speed of symertic encryption. The symetric key will be sent using rsa(asymetric encryption).
+The scurity of RSA with the speed of symertic encryption. The symetric key will be sent using rsa(asymetric encryption).This can easly be done with the code made.
+
 
 
