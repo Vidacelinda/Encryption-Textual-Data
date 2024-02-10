@@ -52,7 +52,7 @@ file: RSA.py
 
 using a RSA libary ( https://pypi.org/project/rsa/ ) and its documentation ( https://stuvel.eu/python-rsa-doc/ ) to help implment RSA. implmentation in file RSA.py
 
-### Hybrid RSA and symetric encryption
+### Hybrid RSA and symetric encryption ()
 
 The scurity of RSA with the speed of symertic encryption. The symetric key will be sent using rsa(asymetric encryption).This can easly be done with the code made.
 
